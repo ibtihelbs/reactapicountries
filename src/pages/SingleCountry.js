@@ -2,17 +2,18 @@ import { useEffect, useState } from 'react'
 import {useParams} from 'react-router';
 import {FetchData} from '../utils/FetchData';
 import { Link } from 'react-router-dom';
-import Info from '../componants/Info';
-import InfoArray from '../componants/InfoArray';
-import Flag from '../componants/Flag'
-import Loader from '../componants/Loader'
+
+import Loader from '../componants/Loader';
+import UiUx from '../componants/UiUx';
+
+
 const SingleCountry = () => {
   const { name } = useParams();
   const [countryData, setCountryData] = useState([]);
   const [borederC, setBorederC] = useState([]);
   
   useEffect(() =>{ 
-    console.log('triggered')
+   
     const urlAll = `https://restcountries.com/v2/all`;
     const url = `https://restcountries.com/v2/name/${name}`;
     const getCountry = async() => {
@@ -29,7 +30,7 @@ const getLink =(c)=>{
   const name = borederC[index].name;
   return  <Link key={index} to={`/Country/${name}`} className="text-[14px] px-5 py-3 flex self-start shadow-md">{name}</Link>
 }
-console.log("app is doing !", countryData.name, borederC.length)
+
   return (
     <div className="px-4 h-screen">
       <Link className="flex gap-2 px-4 py-1 shadow-md w-36" to="/">
@@ -37,17 +38,7 @@ console.log("app is doing !", countryData.name, borederC.length)
         <path strokeLinecap="round" strokeLinejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12" /></svg> 
         <span>go back</span></Link>
       { countryData.length !== 0 && borederC.length !== 0 ? 
-      <div className='h-screen flex justify-center flex items-center'>
-        <div className="h-96 gap-4 py-8 flex flex-col md:flex md:flex-row  shadow-md">
-        <Flag countryData={countryData}  />
-        <div  className="grid grid-cols-2 gap-1 flex align-center w-1/2">
-       <Info countryData={countryData} />
-       <InfoArray countryData={countryData} getLink={getLink} />
-       <div className="flex gap-4">border: {countryData.borders ? countryData.borders.map(c => getLink(c)) : "it's an island"}
-       </div>
-      </div>
-      </div>
-      </div> : <Loader/>}
+        <UiUx getLink={getLink} countryData={countryData} /> : <Loader/>}
     </div>
   )
 }

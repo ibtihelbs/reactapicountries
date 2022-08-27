@@ -8,9 +8,9 @@ const SingleCard = ({country}) => {
       <img className="w-full h-1/2" src={country.flags.png} alt={country.name.common}/>
       <ul className="p-4">
       <li  className="text-[20px]">{country.name.common}</li>
-      <li><span  className="text-[18px]">population:</span><span className="text-[14px]"> {country.population}</span></li>
-      <li><span  className="text-[14px]">capital:</span><span className="text-[14px]">{country.capital}</span> </li>
-      <li><span  className="text-[14px]">Region:</span><span className="text-[14px]">{country.region}</span></li>
+      <li>population: {country.population}</li>
+      <li>capital:{country.capital} </li>
+      <li>Region:{country.region}</li>
       </ul>
     </Link>
   )
