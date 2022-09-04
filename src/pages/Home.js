@@ -71,9 +71,7 @@ const nextPage = () =>{
 
  return (
     <div className="px-4 self-stretch w-screen">
-      <Filters setUrlCountries={setUrlCountries} setCountries={setCountries} countries={countries}/>
-      
-         
+      <Filters setUrlCountries={setUrlCountries} setCountries={setCountries} countries={countries}/>     
       <InfiniteScroll
   dataLength={splitte.length} //This is important field to render the next data
   next={nextPage}
