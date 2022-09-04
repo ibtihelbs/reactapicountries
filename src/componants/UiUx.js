@@ -8,9 +8,9 @@ const UiUx = ({getLink, countryData}) => {
            <div className="h-96 gap-4 py-8 flex flex-col md:flex md:flex-row  shadow-md">
             <Flag countryData={countryData}  />
           <div  className="grid grid-cols-2 gap-1 flex align-center w-1/2">
-         <Info countryData={countryData} />
-         <InfoArray countryData={countryData} getLink={getLink} />
-         <div className="flex gap-4">border: {countryData.borders ? countryData.borders.map(c => getLink(c)) : "it's an island"}
+           <Info countryData={countryData} />
+           <InfoArray countryData={countryData} getLink={getLink} />
+            <div className="flex gap-4">border: {countryData.borders ? countryData.borders.map(c => getLink(c)) : "it's an island"}
           </div>
           </div>
         </div>

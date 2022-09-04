@@ -3,6 +3,7 @@ const Li = ({el}) =>{
   return (<li  className="px-4 py-1 hover:opacity-50">{el}</li>)
 }
 const Filters = ({setUrlCountries, setCountries, countries}) => {
+  
   const [open, setOpen] = useState(false);
   return (
     <div className="gap-4  flex flex-col md:flex md:flex-row md:flex md:justify-between">

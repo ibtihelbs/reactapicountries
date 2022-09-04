@@ -2,10 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 
-const SingleCard = ({country}) => {
+const SingleCard = ({country, index}) => {
+ 
   return (
-    <Link to={`/Country/${country.name.common}`} className="flex-[1_1_180px] shadow-md">
-      <img className="w-full h-1/2" src={country.flags.png} alt={country.name.common}/>
+    <Link to={`/Country/${country.name.common}`}  className="SingleCard flex-[1_1_180px] self-start shadow-md">
+      <img  className="w-full h-1/2 object-cover" src={country.flags.png} alt={country.name.common}/>
+      {index}
       <ul className="p-4">
       <li  className="text-[20px]">{country.name.common}</li>
       <li>population: {country.population}</li>
