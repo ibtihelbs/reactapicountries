@@ -2,12 +2,12 @@ import { useState } from 'react';
 const Li = ({el}) =>{
   return (<li  className="px-4 py-1 hover:opacity-50">{el}</li>)
 }
- const Filters = ({setUrlCountries, setCountries, countries}) => {
+ const Filters = ({setUrlCountries, setCountries, countries, setToRender}) => {
   
   const [open, setOpen] = useState(false);
   const hundleFilter = (e) =>{
     if (e.target.value.length > 0) {
-      setCountries(countries.filter((f)=>f.name.common.toLowerCase().includes(e.target.value.toLowerCase())))
+      setToRender(countries.filter((f)=>f.name.common.toLowerCase().includes(e.target.value.toLowerCase())))
       return;
     }
     console.log('is changing')

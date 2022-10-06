@@ -10,6 +10,7 @@ const Home = () => {
   const [urlCountries, setUrlCountries] = useState('https://restcountries.com/v3.1/all')
   const [countries, setCountries] = useState([]);
   const [splitte, setSplitted] = useState(50);
+  const [toRender, setToRender] = useState([])
   
   useEffect(() =>{ 
     const fetchAllCountries = async() => {
@@ -18,14 +19,17 @@ const Home = () => {
   }
 fetchAllCountries(); 
 },[urlCountries])
-
+   useEffect(()=>{
+    setToRender(countries)
+    },[countries])
+    
 const nextPage = () =>{
   setSplitted(splitte + 50)
 }
 console.log(countries)
 return (
     <div className="px-4 self-stretch w-screen">
-      <Filters setUrlCountries={setUrlCountries} setCountries={setCountries} countries={countries}/>     
+      <Filters setUrlCountries={setUrlCountries} setCountries={setCountries} countries={countries} setToRender={setToRender} />     
       <InfiniteScroll
         dataLength={splitte} //This is important field to render the next data
         next={nextPage}
@@ -37,7 +41,7 @@ return (
     </p>
   }>
   <div className="flex flex-wrap gap-6 py-5">
-    {countries.slice(0, splitte).map((country, index)=>(<SingleCard key={index}   country={country}/>))}
+    {toRender.slice(0, splitte).map((country, index)=>(<SingleCard key={index}   country={country}/>))}
   </div>
   </InfiniteScroll>
   </div> 
