@@ -12,14 +12,12 @@ const SingleCountry = () => {
   const [borederC, setBorederC] = useState([]);
   
   useEffect(() =>{ 
-   
     const urlAll = `https://restcountries.com/v2/all`;
     const url = `https://restcountries.com/v2/name/${name}`;
     const getCountry = async() => {
     const fetchAllCountriesFn = await FetchData(url);
     setCountryData(fetchAllCountriesFn[0]);
     const namesData = await FetchData(urlAll);
-    console.log(namesData);
     setBorederC(namesData.map(country => {return{ name : country.name, code: country.alpha3Code}}));
 }
 getCountry();
