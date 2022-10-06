@@ -17,12 +17,12 @@ const Home = () => {
     setCountries(fetchAllCountriesFn)
   }
 fetchAllCountries(); 
-},[countries, urlCountries])
+},[urlCountries])
 
 const nextPage = () =>{
   setSplitted(splitte + 50)
 }
-console.log(splitte)
+console.log(countries)
 return (
     <div className="px-4 self-stretch w-screen">
       <Filters setUrlCountries={setUrlCountries} setCountries={setCountries} countries={countries}/>     

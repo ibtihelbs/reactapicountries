@@ -8,7 +8,10 @@ const Li = ({el}) =>{
   const hundleFilter = (e) =>{
     if (e.target.value.length > 0) {
       setCountries(countries.filter((f)=>f.name.common.toLowerCase().includes(e.target.value.toLowerCase())))
+      return;
     }
+    console.log('is changing')
+    setCountries(countries)
   }
   return (
     <div className="gap-4  flex flex-col md:flex md:flex-row md:flex md:justify-between">
