@@ -17,7 +17,7 @@ const Filters = ({ setUrlCountries, setCountries, countries, setToRender }) => {
     setCountries(countries);
   };
   return (
-    <div className="gap-4  flex flex-col md:flex md:flex-row md:flex md:justify-between">
+    <div className="gap-4  flex flex-col  md:flex-row md:flex md:justify-between">
       <div className="bg-Element px-4 py-1 flex align-center shadow-md">
         <button>
           <svg

@@ -1,6 +1,5 @@
-import { ThreeCircles } from 'react-loader-spinner';
-const Loader = () => (
-      <ThreeCircles color="grey" />
-  );
-  
-  export default Loader;
+const Loader = () => {
+  return <h1 className="text-center "> Loading..... </h1>;
+};
+
+export default Loader;
