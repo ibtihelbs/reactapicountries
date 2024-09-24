@@ -1,5 +1,3 @@
-
-
 # Country Explorer
 
 Country Explorer is a responsive, user-friendly web application that provides detailed information about countries around the world. It is powered by the [REST Countries API](https://restcountries.com), integrated with **React**, **TailwindCSS**, and **InfiniteScroll** for improved performance and seamless user experience. The recent updates significantly boosted performance, improving the Lighthouse score from **30% to 67%**.
@@ -68,13 +66,13 @@ Country Explorer is a responsive, user-friendly web application that provides de
 ## Screenshots
 
 ### Desktop View
-![Desktop View](./screenshot/desktop.png)
+
+![Desktop View](./public/screenshot/desktop.png)
 
 ### Mobile View
+
 ![Mobile View](./screenshot/mobile.png)
 
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any bug fixes or feature requests.
-
-
