@@ -71,7 +71,7 @@ Country Explorer is a responsive, user-friendly web application that provides de
 
 ### Mobile View
 
-![Mobile View](./screenshot/mobile.png)
+![Mobile View](./public/screenshot/mobile.png)
 
 ## Contributing
 
