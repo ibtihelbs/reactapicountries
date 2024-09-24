@@ -2,7 +2,6 @@ import Info from './Info';
 import InfoArray from './InfoArray';
 import Flag from './Flag'
 const UiUx = ({getLink, countryData}) => {
-    console.log(countryData)
   return (
     <div className='h-screen flex justify-center flex items-center'>
            <div className="h-96 gap-4 py-8 flex flex-col md:flex md:flex-row  shadow-md">

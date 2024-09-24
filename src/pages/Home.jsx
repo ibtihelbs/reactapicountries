@@ -26,7 +26,6 @@ const Home = () => {
   const nextPage = () => {
     setSplitted(splitte + 50);
   };
-  console.log(countries[1]);
   return (
     <div className="px-4 py-8 self-stretch w-screen">
       <Filters

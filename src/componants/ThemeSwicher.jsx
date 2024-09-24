@@ -1,15 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const ThemeSwicher = () => {
+const ThemeSwitcher = () => {
   const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.querySelector("body").classList.add("dark");
+    } else {
+      document.querySelector("body").classList.remove("dark");
+    }
+  }, [darkMode]);
+
   return (
     <ul className="flex justify-between bg-Element shadow-md p-4">
       <li className="font-bold">Where in the world ??</li>
       <li>
         <button
-          onClick={() => {
-            setDarkMode(!darkMode);
-          }}
+          onClick={() => setDarkMode(!darkMode)}
           className="flex justify-between gap-1"
         >
           {darkMode ? (
@@ -44,4 +51,4 @@ const ThemeSwicher = () => {
   );
 };
 
-export default ThemeSwicher;
+export default ThemeSwitcher;

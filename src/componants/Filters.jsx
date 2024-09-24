@@ -13,7 +13,6 @@ const Filters = ({ setUrlCountries, setCountries, countries, setToRender }) => {
       );
       return;
     }
-    console.log("is changing");
     setCountries(countries);
   };
   return (

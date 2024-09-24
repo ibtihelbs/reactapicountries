@@ -2,14 +2,32 @@
   font-family: "Rubic";
   src: url("./rubik-variablefont_wght-webfont.woff2");
 }
+:root {
+  --text: hsl(200, 15%, 8%); /* (Light Mode Text):*/
+  --DM-BG: hsl(0, 0%, 98%); /* (Light Mode Input)**/
+  --DM-element: hsl(0, 0%, 100%);
+  --LM-input: hsl(0, 0%, 52%); /* (Light Mode Input)*/
+}
+.dark {
+  --DM-element: hsl(209, 23%, 22%); /* (Dark Mode Elements)*/
+  --text: hsl(0, 0%, 100%); /* (Dark Mode Text & Light Mode Elements)**/
+  --DM-BG: hsl(207, 26%, 17%); /* (Dark Mode Background)*/
+  --LM-input: --DM-element;
+}
+
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   font-family: "Rubic", sans-serif;
+  background-color: var(--DM-BG);
+  color: var(--text);
 }
 #root {
   height: 100%;
+}
+input {
+  background-color: inherit;
 }
 .virtuosogrid-wrap > div {
   top: auto !important;
