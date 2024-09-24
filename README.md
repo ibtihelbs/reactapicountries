@@ -32,13 +32,13 @@ Country Explorer is a responsive, user-friendly web application that provides de
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/country-explorer.git
+   git clone git clone [[https://github.com/ibtihelbs/reactapicountries.git](https://github.com/ibtihelbs/reactapicountries)]
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd country-explorer
+   cd reactapicountries
    ```
 
 3. Install dependencies:
