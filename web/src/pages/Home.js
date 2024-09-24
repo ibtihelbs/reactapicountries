@@ -1,52 +1,60 @@
-import React, { useState, useEffect } from 'react'
-import SingleCard from '../componants/SingleCard';
-import Filters from '../componants/Filters';
-import {FetchData} from '../utils/FetchData';
-import InfiniteScroll from 'react-infinite-scroll-component';
-import Loader from '../componants/Loader';
+import React, { useState, useEffect } from "react";
+import SingleCard from "../../../src/componants/SingleCard/SingleCard";
+import Filters from "../../../src/componants/Filtersnts/Filters";
+import { FetchData } from "../../web/src/utils/FetchData/FetchData";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Loader from "../../../src/componants/Loaderants/Loader";
 const Home = () => {
-
-  
-  const [urlCountries, setUrlCountries] = useState('https://restcountries.com/v3.1/all')
+  const [urlCountries, setUrlCountries] = useState(
+    "https://restcountries.com/v3.1/all"
+  );
   const [countries, setCountries] = useState([]);
   const [splitte, setSplitted] = useState(50);
-  const [toRender, setToRender] = useState([])
-  
-  useEffect(() =>{ 
-    const fetchAllCountries = async() => {
-    const fetchAllCountriesFn = await FetchData(urlCountries);
-    setCountries(fetchAllCountriesFn)
-  }
-fetchAllCountries(); 
-},[urlCountries])
-   useEffect(()=>{
-    setToRender(countries)
-    },[countries])
-    
-const nextPage = () =>{
-  setSplitted(splitte + 50)
-}
-console.log(countries)
-return (
+  const [toRender, setToRender] = useState([]);
+
+  useEffect(() => {
+    const fetchAllCountries = async () => {
+      const fetchAllCountriesFn = await FetchData(urlCountries);
+      setCountries(fetchAllCountriesFn);
+    };
+    fetchAllCountries();
+  }, [urlCountries]);
+  useEffect(() => {
+    setToRender(countries);
+  }, [countries]);
+
+  const nextPage = () => {
+    setSplitted(splitte + 50);
+  };
+  console.log(countries);
+  return (
     <div className="px-4 self-stretch w-screen">
-      <Filters setUrlCountries={setUrlCountries} setCountries={setCountries} countries={countries} setToRender={setToRender} />     
+      <Filters
+        setUrlCountries={setUrlCountries}
+        setCountries={setCountries}
+        countries={countries}
+        setToRender={setToRender}
+      />
       <InfiniteScroll
         dataLength={splitte} //This is important field to render the next data
         next={nextPage}
         hasMore={true}
-        loader={<Loader/>}
+        loader={<Loader />}
         endMessage={
-    <p style={{ textAlign: 'center' }}>
-      <b>Yay! You have seen it all</b>
-    </p>
-  }>
-  <div className="flex flex-wrap gap-6 py-5">
-    {toRender.slice(0, splitte).map((country, index)=>(<SingleCard key={index}   country={country}/>))}
-  </div>
-  </InfiniteScroll>
-  </div> 
-  )
-}
+          <p style={{ textAlign: "center" }}>
+            <b>Yay! You have seen it all</b>
+          </p>
+        }
+      >
+        <div className="grid grid-cols-4 gap-6 py-5">
+          {toRender.slice(0, splitte).map((country, index) => (
+            <SingleCard key={index} country={country} />
+          ))}
+        </div>
+      </InfiniteScroll>
+    </div>
+  );
+};
 export default Home;
 /** {countries.map((country, index) => (
            <SingleCard key={index}   country={country}/>
